@@ -43,6 +43,9 @@
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:localeConfig="@xml/locales_config"
+        android:allowBackup="false"
+        android:fullBackupContent="@xml/backup_rules"
+        android:dataExtractionRules="@xml/data_extraction_rules"
         android:theme="@style/Theme.PhantomCheck">
 
         <activity
@@ -138,7 +141,10 @@
             </intent-filter>
         </service>
 
-        <receiver android:name=".service.SmsAutoReplyReceiver" android:exported="true">
+        <receiver
+            android:name=".service.SmsAutoReplyReceiver"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_SMS">
             <intent-filter android:priority="999">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>

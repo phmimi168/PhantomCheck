@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 11 (API 30) 以下的備份規則。
+  allowBackup="false" 已停用備份；此檔為縱深防禦，確保任何情況下
+  通知資料庫、偏好設定（含加密 API key）與檔案都不會被備份。
+-->
+<full-backup-content>
+    <exclude domain="database" path="." />
+    <exclude domain="sharedpref" path="." />
+    <exclude domain="file" path="." />
+    <exclude domain="external" path="." />
+    <exclude domain="root" path="." />
+</full-backup-content>
